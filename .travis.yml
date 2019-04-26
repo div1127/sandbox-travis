@@ -17,3 +17,6 @@ script:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   - mvn test
   - mvn surefire-report:report
+ after_failure:
+  - cat target/surefire-reports/*.txt
+
